@@ -14,6 +14,7 @@ include_once __DIR__ . '/../templates/barra.php'
                 type="date"
                 name="fecha"
                 id="fecha"
+                value="<?php echo $fecha; ?>"
             />
         </div>
     </form>
