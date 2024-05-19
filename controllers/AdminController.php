@@ -10,7 +10,6 @@ class AdminController {
         session_start();
 
         // Consultar la base de datos
-
         $consulta = "SELECT citas.id, citas.hora, CONCAT( usuarios.nombre, ' ', usuarios.apellido) as cliente, ";
         $consulta .= " usuarios.email, usuarios.telefono, servicios.nombre as servicio, servicios.precio  ";
         $consulta .= " FROM citas  ";
