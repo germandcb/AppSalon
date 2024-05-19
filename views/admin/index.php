@@ -20,6 +20,12 @@ include_once __DIR__ . '/../templates/barra.php'
     </form>
 </div>
 
+<?php 
+    if( count($citas) === 0 ) {
+        echo "<h2>No hay Citas en esta fecha.</h2>";
+    }
+?>
+
 <div class="citas-admin">
     <ul class="citas">
         <?php
@@ -48,7 +54,17 @@ include_once __DIR__ . '/../templates/barra.php'
 
             if ( esUltimo($actual, $proximo)) { ?>
                 <p class="total">Total: <span>$ <?php echo $total; ?> </span></p>
+                
+                <form action="/api/eliminar" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $cita->id; ?>">
+                    <input type="submit" class="boton-eliminar" value="ELiminar">
+                </form>
+
         <?php }
          } // Fin de Foreach ?>
     </ul>
 </div>
+
+<?php 
+    $script = "<script src='build/js/buscador.js'></script>"
+?>
