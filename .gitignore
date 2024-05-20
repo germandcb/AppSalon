@@ -5,3 +5,5 @@ vendor
 Usuarios.txt
 composer.lock
 package-lock.json
+
+includes/.env 
